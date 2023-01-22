@@ -1,0 +1,22 @@
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.main__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.card {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.deck__container {
+    background-color: lightcyan;}
+
+.shuffle__container {
+    background-color: lightgoldenrodyellow;
+}
