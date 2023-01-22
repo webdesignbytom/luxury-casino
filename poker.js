@@ -54,18 +54,13 @@ function createNewDeck() {
 function shuffleDeck(newDeckUnshuffled) {
   let shuffledDeck = newDeckUnshuffled;
 
-  for (let i = 0; i < shuffledDeck.length; i++) {
-    const randomIndex = Math.floor(Math.random() * shuffledDeck.length);
-    const randomInsert = Math.floor(Math.random() * shuffledDeck.length)
-    const splicedData = shuffledDeck.splice(randomIndex, 1);
-    console.log('spliced', splicedData)
-    // const addedData = shuffledDeck.splice(randomIndex, 0, splicedData)
-    // console.log('added', addedData)
-
-    shuffledDeck = addedData
-  }
-
-  return shuffledDeck;
+  for (let i = shuffledDeck.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * i);
+    let temp = shuffledDeck[i];
+    shuffledDeck[i] = shuffledDeck[j];
+    shuffledDeck[j] = temp;
+}
+return shuffledDeck;
 }
 
 // create deck of 52
