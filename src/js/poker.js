@@ -3,23 +3,23 @@ const signInContainer = document.getElementById('signIn__container');
 const startButton = document.getElementById('startButton');
 
 const gameContainer = document.getElementById('game__container');
-const playersContainer = document.getElementById('players__container')
-const deckContainer = document.getElementById('deck__container')
+const playersContainer = document.getElementById('players__container');
+const deckContainer = document.getElementById('deck__container');
 
 const cardArray = [
-  { name: 'ace', value: 1 },
-  { name: 'two', value: 2 },
-  { name: 'three', value: 3 },
-  { name: 'four', value: 4 },
-  { name: 'five', value: 5 },
-  { name: 'six', value: 6 },
-  { name: 'seven', value: 7 },
-  { name: 'eight', value: 8 },
-  { name: 'nine', value: 9 },
-  { name: 'ten', value: 10 },
-  { name: 'jack', value: 11 },
-  { name: 'queen', value: 12 },
-  { name: 'king', value: 13 },
+  { name: 'ace', value: 1, icon: 'A' },
+  { name: 'two', value: 2, icon: '2' },
+  { name: 'three', value: 3, icon: '3' },
+  { name: 'four', value: 4, icon: '4' },
+  { name: 'five', value: 5, icon: '5' },
+  { name: 'six', value: 6, icon: '6' },
+  { name: 'seven', value: 7, icon: '7' },
+  { name: 'eight', value: 8, icon: '8' },
+  { name: 'nine', value: 9, icon: '9' },
+  { name: 'ten', value: 10, icon: '10' },
+  { name: 'jack', value: 11, icon: 'J' },
+  { name: 'queen', value: 12, icon: 'Q' },
+  { name: 'king', value: 13, icon: 'K' },
 ];
 const suitArray = ['spades', 'hearts', 'diamonds', 'clubs'];
 class Card {
@@ -39,9 +39,12 @@ class PokerGame {
   constructor(players) {
     this.numberOfPlayers = players.length;
     this.antee = 1;
-    this.playersArray = players
+    this.playersArray = players;
+    this.deck = [];
   }
 }
+
+const state = 1;
 
 function startNewGame() {
   const name = 'Tom';
@@ -57,32 +60,42 @@ function startNewGame() {
   playersArray.push(npc2);
 
   const newGame = new PokerGame(playersArray);
-  console.log('new game', newGame);
 
-  buildGameArea(newGame);
+  const newGameDeck = buildGameArea(newGame);
+  console.log('newGameDeck', newGameDeck);
+
+  newGame.deck = newGameDeck;
+  console.log('newGame', newGame);
 }
 
 function buildGameArea(newGame) {
-  console.log('kkk', newGame);
   signInContainer.style.display = 'none';
   gameContainer.style.display = 'grid';
   buildPlayerAreas(newGame);
-  buildDeckArea()
+  // creates a deck
+  const deckX = buildDeckArea();
+  return deckX;
 }
 
+function proveDeck() {
+  console.log('newGamesss', newGame.deck);
+  const card = document.createElement('div');
+}
+function displayAllCards() {}
 function buildDeckArea() {
-  const deckStack = document.getElementById('deck__stack')
-  const deckTotal = document.getElementById('deck__total')
+  const deckStack = document.getElementById('deck__stack');
+  const deckTotal = document.getElementById('deck__total');
 
-  let setupGame = createNewDeck()
-  console.log('setup game', setupGame)
+  let setupGame = createNewDeck();
+  console.log('setup game', setupGame);
 
-  deckTotal.innerText = setupGame.length
+  deckTotal.innerText = setupGame.length;
+  return setupGame;
 }
-
+// Creates a chair/area for each player
 function buildPlayerAreas(newGame) {
-  console.log('pppp', newGame.playersArray);
-  const { playersArray } = newGame
+  const { playersArray } = newGame;
+
   for (let i = 0; i < playersArray.length; i++) {
     const playerContainer = document.createElement('div');
     playerContainer.className = 'player__container';
@@ -110,7 +123,8 @@ function createNewDeck() {
 
 function shuffleDeck(newDeckUnshuffled) {
   let shuffledDeck = newDeckUnshuffled;
-
+  console.log('state', state);
+  console.log('aaaaaaaaaaaaaaaaaa');
   for (let i = shuffledDeck.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * i);
     let temp = shuffledDeck[i];
