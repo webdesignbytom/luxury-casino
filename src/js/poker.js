@@ -3,6 +3,8 @@ const signInContainer = document.getElementById('signIn__container');
 const startButton = document.getElementById('startButton');
 
 const gameContainer = document.getElementById('game__container');
+const playersContainer = document.getElementById('players__container')
+const deckContainer = document.getElementById('deck__container')
 
 const cardArray = [
   { name: 'ace', value: 1 },
@@ -65,6 +67,14 @@ function buildGameArea(newGame) {
   signInContainer.style.display = 'none';
   gameContainer.style.display = 'grid';
   buildPlayerAreas(newGame);
+  buildDeckArea()
+}
+
+function buildDeckArea() {
+  const deckArea = document.createElement('div');
+  deckArea.className = 'deck__area';
+  gameContainer.appendChild(deckArea);
+
 }
 
 function buildPlayerAreas(newGame) {
@@ -74,7 +84,7 @@ function buildPlayerAreas(newGame) {
     const playerContainer = document.createElement('div');
     playerContainer.className = 'player__container';
     playerContainer.innerText = `Name: ${playersArray[i].name}`;
-    gameContainer.appendChild(playerContainer);
+    playersContainer.appendChild(playerContainer);
   }
 }
 
