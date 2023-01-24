@@ -71,10 +71,13 @@ function buildGameArea(newGame) {
 }
 
 function buildDeckArea() {
-  const deckArea = document.createElement('div');
-  deckArea.className = 'deck__area';
-  gameContainer.appendChild(deckArea);
+  const deckStack = document.getElementById('deck__stack')
+  const deckTotal = document.getElementById('deck__total')
 
+  let setupGame = createNewDeck()
+  console.log('setup game', setupGame)
+
+  deckTotal.innerText = setupGame.length
 }
 
 function buildPlayerAreas(newGame) {
