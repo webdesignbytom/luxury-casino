@@ -5,6 +5,7 @@ const startButton = document.getElementById('startButton');
 const gameContainer = document.getElementById('game__container');
 const playersContainer = document.getElementById('players__container');
 const deckContainer = document.getElementById('deck__container');
+const dealerArea = document.getElementById('dealer__area');
 
 const cardArray = [
   { name: 'ace', value: 1, icon: 'A' },
@@ -21,12 +22,13 @@ const cardArray = [
   { name: 'queen', value: 12, icon: 'Q' },
   { name: 'king', value: 13, icon: 'K' },
 ];
-const suitArray = ['spades', 'hearts', 'diamonds', 'clubs'];
+const suitArray = ['♠', '♥', '♦', '♣'];
 class Card {
-  constructor(name, value, suit) {
+  constructor(name, value, suit, icon) {
     this.name = name;
     this.value = value;
     this.suit = suit;
+    this.icon = icon;
   }
 }
 class Player {
@@ -44,7 +46,7 @@ class PokerGame {
   }
 }
 
-const state = 1;
+let gamestate = {};
 
 function startNewGame() {
   const name = 'Tom';
@@ -64,7 +66,10 @@ function startNewGame() {
   const newGameDeck = buildGameArea(newGame);
   console.log('newGameDeck', newGameDeck);
 
+  // set the intance with the new array of card
   newGame.deck = newGameDeck;
+  // set state to new game
+  gamestate = newGame;
   console.log('newGame', newGame);
 }
 
@@ -78,16 +83,30 @@ function buildGameArea(newGame) {
 }
 
 function proveDeck() {
-  console.log('newGamesss', newGame.deck);
-  const card = document.createElement('div');
+  let deckArray = gamestate.deck;
+
+  console.log('deckArray', deckArray);
+  deckArray.forEach((card) => {
+    console.log('card', card);
+    const cardItem = document.createElement('div');
+    const cardImg = document.createElement('div');
+    const cardSuit = document.createElement('div');
+    cardImg.className = 'card__img';
+    cardItem.className = 'card__item';
+    cardSuit.className = 'card__suit';
+    cardImg.innerText = card.icon;
+    cardSuit.innerText = card.suit;
+    dealerArea.appendChild(cardItem)
+    cardItem.appendChild(cardSuit)
+    cardItem.appendChild(cardImg);
+  });
 }
-function displayAllCards() {}
+
 function buildDeckArea() {
   const deckStack = document.getElementById('deck__stack');
   const deckTotal = document.getElementById('deck__total');
 
   let setupGame = createNewDeck();
-  console.log('setup game', setupGame);
 
   deckTotal.innerText = setupGame.length;
   return setupGame;
@@ -113,8 +132,9 @@ function createNewDeck() {
     for (let j = 0; j < cardArray.length; j++) {
       const jname = cardArray[j].name;
       const jvalue = cardArray[j].value;
+      const jicon = cardArray[j].icon;
 
-      const card = new Card(jname, jvalue, suit);
+      const card = new Card(jname, jvalue, suit, jicon);
       newDeck.push(card);
     }
   }

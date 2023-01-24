@@ -64,14 +64,29 @@ body {
   width: 20px;
 }
 
-/* .card {
+.dealer__area {
+  background-color: yellow;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+}
+.card__item { 
   display: grid;
   grid-auto-flow: column;
 }
+.card__item {
+  width: 20px;
+  height: 30px;
+  place-content: center;
+}
+
+.card__suit {
+
+}
 
 .deck__container {
-    background-color: lightcyan;}
+  background-color: lightcyan;
+}
 
 .shuffle__container {
-    background-color: lightgoldenrodyellow;
-} */
+  background-color: lightgoldenrodyellow;
+}
