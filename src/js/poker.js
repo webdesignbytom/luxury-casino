@@ -1,13 +1,8 @@
-const mainContainer = document.getElementById('container');
-const deckContainer = document.createElement('div');
-const shuffleContainer = document.createElement('div');
+const mainContainer = document.getElementById('page__container');
+const signInContainer = document.getElementById('signIn__container');
+const startButton = document.getElementById('startButton');
 
-mainContainer.className = 'main__container';
-deckContainer.className = 'deck__container';
-shuffleContainer.className = 'shuffle__container';
-
-mainContainer.appendChild(deckContainer);
-mainContainer.appendChild(shuffleContainer);
+const gameContainer = document.getElementById('game__container');
 
 const cardArray = [
   { name: 'ace', value: 1 },
@@ -25,12 +20,61 @@ const cardArray = [
   { name: 'king', value: 13 },
 ];
 const suitArray = ['spades', 'hearts', 'diamonds', 'clubs'];
-
 class Card {
   constructor(name, value, suit) {
     this.name = name;
     this.value = value;
     this.suit = suit;
+  }
+}
+class Player {
+  constructor(name, money) {
+    this.name = name;
+    this.bank = money;
+  }
+}
+class PokerGame {
+  constructor(players) {
+    this.numberOfPlayers = players.length;
+    this.antee = 1;
+    this.playersArray = players
+  }
+}
+
+function startNewGame() {
+  const name = 'Tom';
+  const money = 10000;
+  let playersArray = [];
+
+  const player = new Player(name, money);
+  playersArray.push(player);
+
+  const npc1 = new Player('Dave', money);
+  playersArray.push(npc1);
+  const npc2 = new Player('Randy', money);
+  playersArray.push(npc2);
+
+  const newGame = new PokerGame(playersArray);
+  console.log('new game', newGame);
+
+  buildGameArea(newGame);
+}
+
+function buildGameArea(newGame) {
+  console.log('kkk', newGame);
+  signInContainer.style.display = 'none';
+  gameContainer.style.display = 'grid';
+  buildPlayerAreas(newGame);
+}
+
+function buildPlayerAreas(newGame) {
+  console.log('pppp', newGame.playersArray);
+  const { playersArray } = newGame
+  for (let i = 0; i < playersArray.length; i++) {
+    const playerContainer = document.createElement('div');
+    playerContainer.className = 'player__container';
+    playerContainer.innerText = `Name: ${playersArray[i].name}`;
+    gameContainer.appendChild(playerContainer);
   }
 }
 
@@ -59,45 +103,43 @@ function shuffleDeck(newDeckUnshuffled) {
     let temp = shuffledDeck[i];
     shuffledDeck[i] = shuffledDeck[j];
     shuffledDeck[j] = temp;
-}
-return shuffledDeck;
+  }
+  return shuffledDeck;
 }
 
 // create deck of 52
-const newDeckUnshuffled = createNewDeck();
-// display html for deck
-newDeckUnshuffled.forEach((element) => {
-  const card = document.createElement('div');
-  card.className = 'card';
-  deckContainer.appendChild(card);
+// const newDeckUnshuffled = createNewDeck();
+// // display html for deck
+// newDeckUnshuffled.forEach((element) => {
+//   const card = document.createElement('div');
+//   card.className = 'card';
+//   deckContainer.appendChild(card);
 
-  const name = document.createElement('div');
-  const value = document.createElement('div');
-  const suit = document.createElement('div');
-    name.innerText = element.name;
-    value.innerText = element.value;
-    suit.innerText = element.suit;
-    card.appendChild(name);
-    card.appendChild(value);
-    card.appendChild(suit);
-});
-// shuffle new deck
-const deck = shuffleDeck(newDeckUnshuffled);
-// shuffle deck html display
-deck.forEach((element) => {
-    const card = document.createElement('div');
-    card.className = 'card';
-    shuffleContainer.appendChild(card);
-    
-    const name = document.createElement('div');
-    const value = document.createElement('div');
-    const suit = document.createElement('div');
-      name.innerText = element.name;
-      value.innerText = element.value;
-      suit.innerText = element.suit;
-      card.appendChild(name);
-      card.appendChild(value);
-      card.appendChild(suit);
-  });
+//   const name = document.createElement('div');
+//   const value = document.createElement('div');
+//   const suit = document.createElement('div');
+//   name.innerText = element.name;
+//   value.innerText = element.value;
+//   suit.innerText = element.suit;
+//   card.appendChild(name);
+//   card.appendChild(value);
+//   card.appendChild(suit);
+// });
+// // shuffle new deck
+// const deck = shuffleDeck(newDeckUnshuffled);
+// // shuffle deck html display
+// deck.forEach((element) => {
+//   const card = document.createElement('div');
+//   card.className = 'card';
+//   shuffleContainer.appendChild(card);
 
-console.log('shuffled deck:', deck);
+//   const name = document.createElement('div');
+//   const value = document.createElement('div');
+//   const suit = document.createElement('div');
+//   name.innerText = element.name;
+//   value.innerText = element.value;
+//   suit.innerText = element.suit;
+//   card.appendChild(name);
+//   card.appendChild(value);
+//   card.appendChild(suit);
+// });

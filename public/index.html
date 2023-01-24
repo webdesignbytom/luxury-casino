@@ -1,16 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Casino</title>
-    <link rel="stylesheet" href="../src/styles/style.css">
-</head>
-<body>
-    <div id="container">
+    <link rel="stylesheet" href="../src/styles/style.css" />
+  </head>
+  <body>
+    <div id="page__container" class="page__container">
+      <div class="signIn__container" id="signIn__container">
+        <form action="">
+          <label for="username"
+            >username
+            <input type="text" name="username" />
+          </label>
+        </form>
+        <button id="startButton" onclick="startNewGame()">START</button>
+      </div>
 
+      <main id="game__container" class="game__container">
+        
+      </main>
     </div>
     <script src="../src/js/poker.js"></script>
-</body>
+  </body>
 </html>
