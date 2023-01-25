@@ -67,7 +67,7 @@ body {
 .dealer__area {
   background-color: yellow;
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(14, 1fr);
 }
 .card__item { 
   display: grid;

@@ -141,9 +141,8 @@ function createNewDeck() {
   return newDeck;
 }
 
-function shuffleDeck(newDeckUnshuffled) {
-  let shuffledDeck = newDeckUnshuffled;
-  console.log('state', state);
+function shuffleDeck() {
+  let shuffledDeck = gamestate.deck
   console.log('aaaaaaaaaaaaaaaaaa');
   for (let i = shuffledDeck.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * i);
@@ -151,6 +150,8 @@ function shuffleDeck(newDeckUnshuffled) {
     shuffledDeck[i] = shuffledDeck[j];
     shuffledDeck[j] = temp;
   }
+  console.log('shuffledDeck', shuffledDeck);
+  gamestate.deck = shuffledDeck;
   return shuffledDeck;
 }
 
