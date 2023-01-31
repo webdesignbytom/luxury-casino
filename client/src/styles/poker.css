@@ -26,6 +26,14 @@
 /* Top row */
 .top__row {
   background-color: rgb(37, 164, 79);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 6rem;
+}
+
+.player__container {
+  display: grid;
+  justify-content: center;
 }
 
 /* Middle row player 6, 3 and table */
@@ -52,13 +60,16 @@
   border: 3px solid black;
   border-radius: 54px;
   background-color: var(--color-table-green);
+  display: grid;
 }
 
 /* Bottom row */
 .bottom__row {
   background-color: rgb(115, 86, 219);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 6rem;
 }
-
 
 /* PLAYER INFO */
 
@@ -70,5 +81,22 @@
 }
 
 .player__balance__container {
-  
+}
+
+.game__display {
+  display: grid;
+  place-content: center;
+}
+
+/* Cards */
+.game__hand {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 6px;
+}
+
+.card {
+  border: 2px solid black;
+  border-radius: 6px;
+  padding: 0.4rem;
 }
