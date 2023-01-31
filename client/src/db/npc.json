@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "username": "SharkBlast",
+    "bank": 10000,
+    "image": "../images/default.png"
+  },
+  {
+    "id": 2,
+    "username": "ToastMistress",
+    "bank": 10000,
+    "image": "../images/default.png"
+  },
+  {
+    "id": 3,
+    "username": "WinningTube",
+    "bank": 10000,
+    "image": "../images/default.png"
+  },
+  {
+    "id": 4,
+    "username": "RastaPoker",
+    "bank": 10000,
+    "image": "../images/default.png"
+  },
+  {
+    "id": 5,
+    "username": "PokerMon",
+    "bank": 10000,
+    "image": "../images/default.png"
+  }
+]
