@@ -1,0 +1,26 @@
+nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background: var(--color-bg-variant);
+    align-items: center;
+    padding: 0.4rem;
+}
+
+.logo__container {
+    display: grid;
+}
+
+.logo__container img {
+    width: 45px;
+}
+
+.game__title {
+    text-align: center
+}
+
+.links__container {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: end;
+    gap: 1rem;
+}

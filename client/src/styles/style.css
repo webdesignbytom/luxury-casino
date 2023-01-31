@@ -1,15 +1,8 @@
-body {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
 .page__container {
   display: grid;
   height: 100vh;
   width: 100vw;
   place-content: center;
-  background-color: bisque;
   overflow: hidden;
 }
 
@@ -69,7 +62,7 @@ body {
   display: grid;
   grid-template-columns: repeat(14, 1fr);
 }
-.card__item { 
+.card__item {
   display: grid;
   grid-auto-flow: column;
 }
@@ -80,7 +73,6 @@ body {
 }
 
 .card__suit {
-
 }
 
 .deck__container {
