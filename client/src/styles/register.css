@@ -1,0 +1,10 @@
+.page__container {
+    display: grid;
+    height: 100vh;
+    grid-template-rows: auto 1fr;
+}
+
+.register__component {
+    display: grid;
+    place-content: center;    
+}
