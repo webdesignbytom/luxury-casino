@@ -1,0 +1,12 @@
+.page__container {
+    display: grid;
+    height: 100vh;
+    grid-template-rows: auto 1fr;
+}
+
+.login__component {
+    display: grid;
+    place-content: center;
+    background-color: red;
+    
+}
