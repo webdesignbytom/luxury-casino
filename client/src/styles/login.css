@@ -6,7 +6,5 @@
 
 .login__component {
     display: grid;
-    place-content: center;
-    background-color: red;
-    
+    place-content: center;    
 }
