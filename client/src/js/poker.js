@@ -1,3 +1,5 @@
+const npcGamers = require('../db/npc.json')
+console.log('npcGamers', npcGamers)
 const mainContainer = document.getElementById('page__container');
 const signInContainer = document.getElementById('signIn__container');
 const startButton = document.getElementById('startButton');
@@ -22,7 +24,12 @@ const cardArray = [
   { name: 'queen', value: 12, icon: 'Q' },
   { name: 'king', value: 13, icon: 'K' },
 ];
-const suitArray = ['♠', '♥', '♦', '♣'];
+const suitArray = [
+  { icon: '♠', name: 'spades' },
+  { icon: '♥', name: 'hearts' },
+  { icon: '♦', name: 'diamonds' },
+  { icon: '♣', name: 'clubs' },
+];
 class Card {
   constructor(name, value, suit, icon) {
     this.name = name;
@@ -96,8 +103,8 @@ function proveDeck() {
     cardSuit.className = 'card__suit';
     cardImg.innerText = card.icon;
     cardSuit.innerText = card.suit;
-    dealerArea.appendChild(cardItem)
-    cardItem.appendChild(cardSuit)
+    dealerArea.appendChild(cardItem);
+    cardItem.appendChild(cardSuit);
     cardItem.appendChild(cardImg);
   });
 }
@@ -142,7 +149,7 @@ function createNewDeck() {
 }
 
 function shuffleDeck() {
-  let shuffledDeck = gamestate.deck
+  let shuffledDeck = gamestate.deck;
   console.log('aaaaaaaaaaaaaaaaaa');
   for (let i = shuffledDeck.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * i);
