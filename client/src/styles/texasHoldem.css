@@ -48,16 +48,15 @@
 }
 
 .game__container {
-  border: 3px solid black;
   display: grid;
   grid-template-rows: 100px 220px 100px;
   width: 50vw;
+  padding: 2rem;
 }
 
 /* CONTAINERS AND LAYOUT */
 /* Top row */
 .top__row {
-  background-color: rgb(37, 164, 79);
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 0 6rem;
@@ -70,13 +69,14 @@
 
 /* Middle row player 6, 3 and table */
 .middle__row {
-  background-color: rgb(157, 206, 52);
   display: grid;
   grid-template-columns: 100px 1fr 100px;
 }
 
 .table__container {
   display: grid;
+  padding: 1rem;
+  min-width: 400px;
 }
 
 /* Table Styling */
@@ -103,14 +103,12 @@
 }
 /* Bottom row */
 .bottom__row {
-  background-color: rgb(115, 86, 219);
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 0 6rem;
 }
 
 /* PLAYER INFO */
-
 .player__img__container {
   cursor: pointer;
 }
@@ -130,6 +128,13 @@
 }
 
 /* Cards */
+.hand__container {
+  display: grid;
+  grid-auto-flow: column;
+  place-content: center;
+  gap: 2px;
+}
+
 .game__hand {
   display: grid;
   grid-auto-flow: column;
@@ -140,4 +145,7 @@
   border: 2px solid black;
   border-radius: 6px;
   padding: 0.4rem;
+  height: 50px;
+  width: 33px;
+  background: white;
 }
