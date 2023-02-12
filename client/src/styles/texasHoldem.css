@@ -7,6 +7,19 @@
   grid-template-rows: 50px 1fr;
 }
 
+.controls__container {
+  display: grid;
+  position: absolute;
+  bottom: 20px;
+  left: 5px;
+}
+
+.controls__container button {
+  padding: 1rem;
+  background-color: gold;
+  border-radius: 18px;
+ 
+}
 /* Game Container */
 .room__container {
   display: grid;
@@ -32,7 +45,6 @@
 }
 
 .login__inputs {
-
 }
 
 .game__container {
@@ -81,8 +93,14 @@
   border-radius: 54px;
   background-color: var(--color-table-green);
   display: grid;
+  padding: 1rem;
 }
 
+.player__cards__ring {
+  display: grid;
+  border: 1px solid white;
+  border-radius: 54px;
+}
 /* Bottom row */
 .bottom__row {
   background-color: rgb(115, 86, 219);
@@ -93,6 +111,9 @@
 
 /* PLAYER INFO */
 
+.player__img__container {
+  cursor: pointer;
+}
 .player__img__container img {
   border: 1px solid black;
   border-radius: 50%;

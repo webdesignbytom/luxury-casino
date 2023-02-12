@@ -18,45 +18,52 @@
         <div id="username__nav"></div>
         <div class="game__title">TEXAS HOLDEM</div>
         <ul class="links__container">
-            <li>
-              <a href="/index.html">Home</a>
-            </li>
-            <li>
-              <a href="./deposit.html">Deposit</a>
-            </li>
-            <li>
-              <a href="./account.html">Account</a>
-            </li>
-            <li>
-              <a href="./login.html">Login</a>
-            </li>
-            <li>
-              <a href="./register.html">Register</a>
-            </li>
-          </ul>
+          <li>
+            <a href="/index.html">Home</a>
+          </li>
+          <li>
+            <a href="./deposit.html">Deposit</a>
+          </li>
+          <li>
+            <a href="./account.html">Account</a>
+          </li>
+          <li>
+            <a href="./login.html">Login</a>
+          </li>
+          <li>
+            <a href="./register.html">Register</a>
+          </li>
+        </ul>
       </nav>
 
       <main class="room__container">
-
         <div class="login__container">
           <h2>Login</h2>
           <form class="login__inputs" id="loginForm">
             <label for="username">Username:</label>
-            <input type="text" id="username">
+            <input type="text" id="username" />
             <label for="password">Password:</label>
-            <input type="password" id="password">
-            <input type="submit" onclick="loginUser()" value="submit">
+            <input type="password" id="password" />
+            <input type="submit" value="submit" />
           </form>
+        </div>
+
+        <div class="controls__container">
+          <button onclick="startGame()">PLAY</button>
+          <button onclick="startNextHand()">NEXT HAND</button>
         </div>
 
         <section class="game__container">
           <!-- PLAYERS 1 AND 2 -->
           <div class="top__row">
-            
             <div class="player__container" id="player1seat">
               <div class="isDealer"></div>
               <div class="player__img__container">
-                <img src="../src/images/default.png" alt="avatar1" id="player1img" />
+                <img
+                  src="../src/images/default.png"
+                  alt="avatar1"
+                  id="player1img"
+                />
               </div>
               <div class="player__username__container" id="player1name"></div>
               <div class="player__balance__container" id="player1bank"></div>
@@ -69,7 +76,11 @@
             <div class="player__container" id="player2seat">
               <div class="isDealer"></div>
               <div class="player__img__container">
-                <img src="../src/images/default.png" alt="avatar2" id="player2img" />
+                <img
+                  src="../src/images/default.png"
+                  alt="avatar2"
+                  id="player2img"
+                />
               </div>
               <div class="player__username__container" id="player2name"></div>
               <div class="player__balance__container" id="player2bank"></div>
@@ -83,8 +94,12 @@
           <div class="middle__row">
             <div class="player__container" id="player6seat">
               <div class="isDealer"></div>
-              <div class="player__img__container">
-                <img src="../src/images/default.png" alt="avatar6" id="player6img" />
+              <div class="player__img__container" onclick="joinTable()">
+                <img
+                  src="../src/images/default.png"
+                  alt="avatar6"
+                  id="player6img"
+                />
               </div>
               <div class="player__username__container" id="player6name"></div>
               <div class="player__balance__container" id="player6bank"></div>
@@ -97,15 +112,17 @@
             <div class="table__container">
               <div class="blackedge">
                 <div class="inneredge">
-                  <section class="game__display">
-                    <div class="game__hand">
-                      <div class="card card1">A</div>
-                      <div class="card card2">8</div>
-                      <div class="card card3">K</div>
-                      <div class="card card4">2</div>
-                      <div class="card card5">5</div>
-                    </div>
-                  </section>
+                  <div class="player__cards__ring">
+                    <section class="game__display">
+                      <div class="game__hand">
+                        <div class="card card1">A</div>
+                        <div class="card card2">8</div>
+                        <div class="card card3">K</div>
+                        <div class="card card4">2</div>
+                        <div class="card card5">5</div>
+                      </div>
+                    </section>
+                  </div>
                 </div>
               </div>
             </div>
@@ -113,7 +130,11 @@
             <div class="player__container" id="player3seat">
               <div class="isDealer"></div>
               <div class="player__img__container">
-                <img src="../src/images/default.png" alt="avatar3" id="player3img" />
+                <img
+                  src="../src/images/default.png"
+                  alt="avatar3"
+                  id="player3img"
+                />
               </div>
               <div class="player__username__container" id="player3name"></div>
               <div class="player__balance__container" id="player3bank"></div>
@@ -129,7 +150,11 @@
             <div class="player__container" id="player4seat">
               <div class="isDealer"></div>
               <div class="player__img__container">
-                <img src="../src/images/default.png" alt="avatar4" id="player4img" />
+                <img
+                  src="../src/images/default.png"
+                  alt="avatar4"
+                  id="player4img"
+                />
               </div>
               <div class="player__username__container" id="player4name"></div>
               <div class="player__balance__container" id="player4bank"></div>
@@ -142,7 +167,11 @@
             <div class="player__container" id="player5seat">
               <div class="isDealer"></div>
               <div class="player__img__container">
-                <img src="../src/images/default.png" alt="avatar5" id="player5img" />
+                <img
+                  src="../src/images/default.png"
+                  alt="avatar5"
+                  id="player5img"
+                />
               </div>
               <div class="player__username__container" id="player5name"></div>
               <div class="player__balance__container" id="player5bank"></div>
