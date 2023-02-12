@@ -97,12 +97,7 @@ class Player {
     this.hand = undefined;
   }
 }
-class Round {
-  constructor(a, b) {
-    this.a = a;
-    this.b = b;
-  }
-}
+
 class Hand {
   constructor(handId, handOwner, playerHand) {
     this.handId = handId;
@@ -121,6 +116,13 @@ class Game {
     this.antee = 1;
     this.deck = [];
     this.holeCardNum = 2;
+    this.houseCardNum = 5;
+    this.houseCards = []
+    this.card1 = undefined;
+    this.card2 = undefined;
+    this.card3 = undefined;
+    this.card4 = undefined;
+    this.card5 = undefined;
   }
 
   createDeck() {
@@ -201,8 +203,10 @@ function startNextHand() {
   gameState.currentGame.shuffleDeck();
   gameState.currentGame.dealHand();
   renderCardsStageOne();
+  renderCardsStageTwo();
 }
 
+// Each player gets 2 cards
 function renderCardsStageOne() {
   gameState.currentPlayers.forEach((player) => {
     // console.log('player x', player.hand.playerHand)
@@ -224,6 +228,32 @@ function renderCardsStageOne() {
     card2.appendChild(card2Value);
     card2.appendChild(card2Suit);
   });
+}
+
+// Deal 3 cards in the center
+function renderCardsStageTwo() {
+  const cardsContainer = document.getElementById('house__cards');
+
+  let numberToRender = 3
+  let dealerArray = [];
+  for (let i = 1; i <= numberToRender; i++) {
+    let card = gameState.currentGame.deck.splice(0, 1)
+    dealerArray.push(card)
+    
+    const cardContainer = document.getElementById(`card${i}`)
+    
+    const cardValue = document.createElement('p');
+    const cardSuit = document.createElement('p');
+    
+    cardValue.innerText = card.value;
+    console.log('CARD XXX: ', card)
+    cardSuit.innerText = card.suit.name;
+
+    cardContainer.appendChild(cardValue);
+    cardContainer.appendChild(cardSuit);
+  }
+
+  gameState.currentGame.houseCards = dealerArray
 }
 
 function joinTable() {
