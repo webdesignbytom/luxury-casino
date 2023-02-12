@@ -1,0 +1,151 @@
+.poker__page__container {
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  border: 2px solid white;
+  grid-template-rows: 50px 1fr;
+}
+
+.controls__container {
+  display: grid;
+  position: absolute;
+  bottom: 20px;
+  left: 5px;
+}
+
+.controls__container button {
+  padding: 1rem;
+  background-color: gold;
+  border-radius: 18px;
+ 
+}
+/* Game Container */
+.room__container {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-content: center;
+  position: relative;
+}
+
+.login__container {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  display: grid;
+  padding: 0.6rem;
+  border: 2px solid black;
+  border-radius: 18px;
+}
+
+.login__inputs {
+  display: grid;
+  gap: 3px;
+}
+
+.login__inputs {
+}
+
+.game__container {
+  display: grid;
+  grid-template-rows: 100px 220px 100px;
+  width: 50vw;
+  padding: 2rem;
+}
+
+/* CONTAINERS AND LAYOUT */
+/* Top row */
+.top__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 6rem;
+}
+
+.player__container {
+  display: grid;
+  justify-content: center;
+}
+
+/* Middle row player 6, 3 and table */
+.middle__row {
+  display: grid;
+  grid-template-columns: 100px 1fr 100px;
+}
+
+.table__container {
+  display: grid;
+  padding: 1rem;
+  min-width: 400px;
+}
+
+/* Table Styling */
+.blackedge {
+  border: 4px solid black;
+  background: var(--color-table-cushion);
+  border-radius: 64px;
+  display: grid;
+  padding: 0.8rem;
+}
+
+.inneredge {
+  border: 3px solid black;
+  border-radius: 54px;
+  background-color: var(--color-table-green);
+  display: grid;
+  padding: 1rem;
+}
+
+.player__cards__ring {
+  display: grid;
+  border: 1px solid white;
+  border-radius: 54px;
+}
+/* Bottom row */
+.bottom__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 6rem;
+}
+
+/* PLAYER INFO */
+.player__img__container {
+  cursor: pointer;
+}
+.player__img__container img {
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+}
+
+.player__balance__container {
+}
+
+.game__display {
+  display: grid;
+  place-content: center;
+}
+
+/* Cards */
+.hand__container {
+  display: grid;
+  grid-auto-flow: column;
+  place-content: center;
+  gap: 2px;
+}
+
+.game__hand {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 6px;
+}
+
+.card {
+  border: 2px solid black;
+  border-radius: 6px;
+  padding: 0.4rem;
+  height: 50px;
+  width: 33px;
+  background: white;
+}
