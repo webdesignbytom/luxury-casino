@@ -18,8 +18,14 @@ enum Role {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  email     String   @unique
-  password  String
-  role      Role     @default(USER)
+  id       Int    @id @default(autoincrement())
+  email    String @unique
+  password String
+  role     Role   @default(USER)
+}
+
+model Account {
+  id       Int    @id @default(autoincrement())
+  username String @unique @default("")
+  bank     Int    @default(0)
 }
