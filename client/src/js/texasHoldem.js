@@ -204,12 +204,13 @@ function startNextHand() {
   gameState.currentGame.dealHand();
   renderCardsStageOne();
   renderCardsStageTwo();
+
+  console.log('GAMESTATE: ' + gameState.currentGame)
 }
 
 // Each player gets 2 cards
 function renderCardsStageOne() {
   gameState.currentPlayers.forEach((player) => {
-    // console.log('player x', player.hand.playerHand)
     const card1 = document.getElementById(`player${player.id}-1`);
     const card2 = document.getElementById(`player${player.id}-2`);
 
@@ -232,8 +233,6 @@ function renderCardsStageOne() {
 
 // Deal 3 cards in the center
 function renderCardsStageTwo() {
-  const cardsContainer = document.getElementById('house__cards');
-
   let numberToRender = 3
   let dealerArray = [];
   for (let i = 1; i <= numberToRender; i++) {
@@ -245,9 +244,8 @@ function renderCardsStageTwo() {
     const cardValue = document.createElement('p');
     const cardSuit = document.createElement('p');
     
-    cardValue.innerText = card.value;
-    console.log('CARD XXX: ', card)
-    cardSuit.innerText = card.suit.name;
+    cardValue.innerText = card[0].value;
+    cardSuit.innerText = card[0].suit.icon;
 
     cardContainer.appendChild(cardValue);
     cardContainer.appendChild(cardSuit);
