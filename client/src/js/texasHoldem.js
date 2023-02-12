@@ -107,7 +107,7 @@ class Hand {
   constructor(handId, handOwner, playerHand) {
     this.handId = handId;
     this.handOwner = handOwner;
-    this.playerHand = playerHand
+    this.playerHand = playerHand;
   }
 }
 class Game {
@@ -116,7 +116,7 @@ class Game {
     this.playerArray = playerArray;
     this.title = 'Lucky Bastard Pot';
     this.numHands = 0;
-    this.handId = 1
+    this.handId = 1;
     // Game play data
     this.antee = 1;
     this.deck = [];
@@ -155,21 +155,18 @@ class Game {
   dealHand() {
     // players each get one card
     this.playerArray.forEach((player) => {
-      let newPlayerHand = []
+      let newPlayerHand = [];
 
       for (let i = 0; i < this.holeCardNum; i++) {
-        let cards = this.deck.splice(0, 1)
-        let card = cards[0]
-        newPlayerHand.push(card)
+        let cards = this.deck.splice(0, 1);
+        let card = cards[0];
+        newPlayerHand.push(card);
       }
 
-      console.log('CARDS', newPlayerHand)
-      
-      const newHand = new Hand(this.handId, player.username, newPlayerHand)
-      this.handId++
-      player.hand = newHand
-    })
-    console.log('GAME', gameState)
+      const newHand = new Hand(this.handId, player.username, newPlayerHand);
+      this.handId++;
+      player.hand = newHand;
+    });
   }
 }
 
@@ -200,14 +197,33 @@ function startGame() {
 }
 
 function startNextHand() {
-  gameState.currentGame.createDeck()
+  gameState.currentGame.createDeck();
   gameState.currentGame.shuffleDeck();
   gameState.currentGame.dealHand();
-  renderCardsStageOne()
+  renderCardsStageOne();
 }
 
 function renderCardsStageOne() {
-  
+  gameState.currentPlayers.forEach((player) => {
+    // console.log('player x', player.hand.playerHand)
+    const card1 = document.getElementById(`player${player.id}-1`);
+    const card2 = document.getElementById(`player${player.id}-2`);
+
+    const card1Value = document.createElement('p');
+    const card2Value = document.createElement('p');
+    const card1Suit = document.createElement('p');
+    const card2Suit = document.createElement('p');
+
+    card1Value.innerText = player.hand.playerHand[0].value;
+    card2Value.innerText = player.hand.playerHand[1].value;
+    card1Suit.innerText = player.hand.playerHand[0].suit.icon;
+    card2Suit.innerText = player.hand.playerHand[1].suit.icon;
+
+    card1.appendChild(card1Value);
+    card1.appendChild(card1Suit);
+    card2.appendChild(card2Value);
+    card2.appendChild(card2Suit);
+  });
 }
 
 function joinTable() {
