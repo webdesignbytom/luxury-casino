@@ -4,19 +4,37 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="apple-touch-icon" sizes="180x180" href="..favicon/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="..favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./favicon/favicon-16x16.png"
+    />
     <link rel="manifest" href="./manifest.json" />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
     <title>Poker</title>
     <link rel="stylesheet" href="../src/styles/index.css" />
     <link rel="stylesheet" href="../src/styles/texasHoldem.css" />
+    <link rel="stylesheet" href="../src/styles/player.css" />
     <link rel="stylesheet" href="../src/styles/nav.css" />
+    <link rel="stylesheet" href="../src/styles/chatContainer.css" />
   </head>
   <body>
     <div class="poker__page__container">
+
+      <!-- Nav Bar -->
       <nav>
         <div class="logo__container">
           <a href="./index.html">
@@ -44,7 +62,10 @@
         </ul>
       </nav>
 
+      <!-- Room and main page -->
       <main class="room__container">
+
+        <!-- Login -->
         <div class="login__container">
           <h2>Login</h2>
           <form class="login__inputs" id="loginForm">
@@ -56,11 +77,23 @@
           </form>
         </div>
 
+        <!-- Buttons -->
         <div class="controls__container">
           <button onclick="startGame()">PLAY</button>
           <button onclick="startNextHand()">NEXT HAND</button>
         </div>
 
+        <!-- Chat box -->
+        <section class="chat__container">
+          <div class="chat__titles">
+            <h2>ROOM CHAT</h2>
+          </div>
+          <div class="messages__container">
+            Messages container
+          </div>
+        </section>
+
+        <!-- Players and table -->
         <section class="game__container">
           <!-- PLAYERS 1 AND 2 -->
           <div class="top__row">
@@ -126,8 +159,8 @@
                         <div class="card card1" id="card1"></div>
                         <div class="card card2" id="card2"></div>
                         <div class="card card3" id="card3"></div>
-                        <div class="card card4" id="card4">2</div>
-                        <div class="card card5" id="card5">5</div>
+                        <div class="card card4" id="card4"></div>
+                        <div class="card card5" id="card5"></div>
                       </div>
                     </section>
                   </div>

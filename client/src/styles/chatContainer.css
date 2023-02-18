@@ -1,0 +1,17 @@
+.chat__container {
+    display: grid;
+    border: 2px solid black;
+    border-radius: 18px;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    padding: 0.4rem;
+}
+
+.chat__titles {
+    text-align: center;
+}
+
+.messages__container {
+    
+}

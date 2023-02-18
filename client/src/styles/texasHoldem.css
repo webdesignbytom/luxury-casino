@@ -57,11 +57,6 @@
   padding: 0 6rem;
 }
 
-.player__container {
-  display: grid;
-  justify-content: center;
-}
-
 /* Middle row player 6, 3 and table */
 .middle__row {
   display: grid;
@@ -101,33 +96,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 0 6rem;
-}
-
-/* PLAYER INFO */
-.player__img__container {
-  cursor: pointer;
-}
-.player__img__container img {
-  border: 1px solid black;
-  border-radius: 50%;
-  width: 75px;
-  height: 75px;
-}
-
-.player__balance__container {
-}
-
-.game__display {
-  display: grid;
-  place-content: center;
-}
-
-/* Cards */
-.hand__container {
-  display: grid;
-  grid-auto-flow: column;
-  place-content: center;
-  gap: 2px;
 }
 
 .game__hand {
