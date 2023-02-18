@@ -43,13 +43,9 @@
   gap: 3px;
 }
 
-.login__inputs {
-}
-
 .game__container {
   display: grid;
-  grid-template-rows: 100px 220px 100px;
-  width: 50vw;
+  grid-template-rows: auto 220px auto;
   padding: 2rem;
 }
 
