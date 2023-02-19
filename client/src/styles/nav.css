@@ -1,6 +1,6 @@
 nav {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     background: var(--color-bg-variant);
     align-items: center;
     padding: 0.4rem;
@@ -23,4 +23,12 @@ nav {
     grid-auto-flow: column;
     justify-content: end;
     gap: 1rem;
+}
+
+@media screen and (max-width: 1200px) {
+  
+}
+
+@media screen and (max-width: 1000px) {
+
 }

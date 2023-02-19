@@ -33,7 +33,6 @@
   </head>
   <body>
     <div class="poker__page__container">
-
       <!-- Nav Bar -->
       <nav>
         <div class="logo__container">
@@ -41,7 +40,6 @@
             <img src="../src/images/yoda1.png" alt="yoda logo" />
           </a>
         </div>
-        <div id="username__nav"></div>
         <div class="game__title">TEXAS HOLDEM</div>
         <ul class="links__container">
           <li>
@@ -64,7 +62,6 @@
 
       <!-- Room and main page -->
       <main class="room__container">
-
         <!-- Login -->
         <div class="login__container">
           <h2>Login</h2>
@@ -81,6 +78,11 @@
         <div class="controls__container">
           <button onclick="startGame()">PLAY</button>
           <button onclick="startNextHand()">NEXT HAND</button>
+          <button onclick="startNextHand()">ANTEE</button>
+          <button onclick="startNextHand()">FOLD</button>
+          <button onclick="startNextHand()">CALL</button>
+          <button onclick="startNextHand()">RAISE</button>
+          <button onclick="startNextHand()">ALL IN</button>
         </div>
 
         <!-- Chat box -->
@@ -88,9 +90,7 @@
           <div class="chat__titles">
             <h2>ROOM CHAT</h2>
           </div>
-          <div class="messages__container">
-            Messages container
-          </div>
+          <div class="messages__container">Messages container</div>
         </section>
 
         <!-- Players and table -->
@@ -107,8 +107,10 @@
                   id="player1img"
                 />
               </div>
-              <div class="player__username__container" id="player1name"></div>
-              <div class="player__balance__container" id="player1bank"></div>
+              <div>
+                <div class="player__username__container" id="player1name"></div>
+                <div class="player__balance__container" id="player1bank"></div>
+              </div>
               <div class="hand__container" id="player1hand">
                 <div class="holecard card" id="player1-1"></div>
                 <div class="holecard card" id="player1-2"></div>
@@ -124,8 +126,10 @@
                   id="player2img"
                 />
               </div>
-              <div class="player__username__container" id="player2name"></div>
-              <div class="player__balance__container" id="player2bank"></div>
+              <div>
+                <div class="player__username__container" id="player2name"></div>
+                <div class="player__balance__container" id="player2bank"></div>
+              </div>
               <div class="hand__container" id="player2hand">
                 <div class="holecard card" id="player2-1"></div>
                 <div class="holecard card" id="player2-2"></div>
@@ -143,8 +147,12 @@
                   id="player6img"
                 />
               </div>
-              <div class="player__username__container" id="player6name"></div>
-              <div class="player__balance__container" id="player6bank"></div>
+              <div>
+                <div class="player__username__container" id="player6name">
+                  Name
+                </div>
+                <div class="player__balance__container" id="player6bank">1</div>
+              </div>
               <div class="hand__container" id="player6hand">
                 <div class="holecard card" id="player6-1"></div>
                 <div class="holecard card" id="player6-2"></div>
@@ -178,8 +186,10 @@
                   id="player3img"
                 />
               </div>
-              <div class="player__username__container" id="player3name"></div>
-              <div class="player__balance__container" id="player3bank"></div>
+              <div>
+                <div class="player__username__container" id="player3name"></div>
+                <div class="player__balance__container" id="player3bank"></div>
+              </div>
               <div class="hand__container" id="player3hand">
                 <div class="holecard card" id="player3-1"></div>
                 <div class="holecard card" id="player3-2"></div>
@@ -198,8 +208,10 @@
                   id="player4img"
                 />
               </div>
-              <div class="player__username__container" id="player4name"></div>
-              <div class="player__balance__container" id="player4bank"></div>
+              <div>
+                <div class="player__username__container" id="player4name"></div>
+                <div class="player__balance__container" id="player4bank"></div>
+              </div>
               <div class="hand__container" id="player4hand">
                 <div class="holecard card" id="player4-1"></div>
                 <div class="holecard card" id="player4-2"></div>
@@ -215,8 +227,10 @@
                   id="player5img"
                 />
               </div>
-              <div class="player__username__container" id="player5name"></div>
-              <div class="player__balance__container" id="player5bank"></div>
+              <div>
+                <div class="player__username__container" id="player5name"></div>
+                <div class="player__balance__container" id="player5bank"></div>
+              </div>
               <div class="hand__container" id="player5hand">
                 <div class="holecard card" id="player5-1"></div>
                 <div class="holecard card" id="player5-2"></div>

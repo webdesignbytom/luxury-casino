@@ -2,6 +2,7 @@
 .player__container {
   display: grid;
   justify-content: center;
+  grid-template-rows: repeat(5, min-content);
 }
 
 .player__img__container {
@@ -11,7 +12,7 @@
 }
 
 .player__img__container img {
-  border: 1px solid black;
+  border: 3px solid black;
   border-radius: 50%;
   width: 75px;
   height: 75px;
@@ -36,4 +37,17 @@
   grid-auto-flow: column;
   place-content: center;
   gap: 2px;
+}
+
+@media screen and (max-width: 1200px) {
+  
+}
+
+@media screen and (max-width: 1000px) {
+    .player__container {
+        grid-template-columns: repeat(4, auto);
+        grid-template-rows: none;
+        align-items: center;
+        gap: 0.4rem;
+    }
 }
